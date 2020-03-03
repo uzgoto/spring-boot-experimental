@@ -13,6 +13,7 @@ public class DemoController implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
+    System.out.println("Read properties.");
     System.out.println("==========");
     printPropertiesService.print();
     System.out.println("==========");
