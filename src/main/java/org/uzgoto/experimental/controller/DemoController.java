@@ -21,6 +21,6 @@ public class DemoController implements CommandLineRunner {
     System.out.println("==========");
 
     System.out.println("Run and retry.");
-    retryService.run();
+    retryService.print();
   }
 }
