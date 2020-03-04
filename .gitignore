@@ -1,0 +1,8 @@
+build
+bin
+.gradle
+.vscode
+.idea
+.eclipse
+.project
+.classpath
