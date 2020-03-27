@@ -7,7 +7,6 @@ import org.uzgoto.experimental.services.PrintPropertiesService;
 import org.uzgoto.experimental.services.RetryService;
 
 import lombok.AllArgsConstructor;
-import sun.misc.Signal;
 
 @Controller
 @AllArgsConstructor
@@ -27,7 +26,6 @@ public class DemoController implements CommandLineRunner {
         System.out.println("Start shutdown hook.");
         executorService.close();
       } catch (Exception e) {
-        // TODO Auto-generated catch block
         e.printStackTrace();
       } finally {
         System.out.println("End shutdown hook.");
