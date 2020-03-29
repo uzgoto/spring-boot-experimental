@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.2.4.RELEASE'
+	id 'org.springframework.boot' version '2.2.5.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
 	id 'com.diffplug.gradle.spotless' version '3.27.1'
@@ -33,9 +33,23 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	// testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	// testImplementation platform('org.junit:junit-bom:5.6.1')
+	// testImplementation 'org.junit.jupiter:junit-jupiter-api'
+	// testRuntimeOnly 'org:junit.jupiter:junit-jupiter-engine'
+
+	// testImplementation 'junit:junit:4.13'
+	testImplementation 'org.powermock:powermock-api-mockito2:2.0.6'
+	testImplementation 'org.powermock:powermock-module-junit4:2.0.6'
+	// testImplementation 'org.mockito:mockito-junit-jupiter:3.3.3'
+	// testImplementation 'org.mockito:mockito-inline:3.3.3'
+	// testImplementation 'org.mockito:junit-jupiter:2.20.0'
+	// testImplementation 'org.mockito:inline:2.20.0'
 	// testImplementation 'org.springframework.boot:spring-boot-starter-batch-test'
 }
 
@@ -44,9 +58,6 @@ test {
 }
 
 spotless {
-	format 'java' {
-
-	}
 	java {
 		googleJavaFormat()
 		target '**/*.java, **/*.gradle'
